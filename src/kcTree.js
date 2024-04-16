@@ -16,6 +16,11 @@ export function kcTree(data) {
         .attr("viewBox", [-width / 2, -height / 2, width, height])
         .attr("style", "max-width: 100%; height: auto;")
         .call(d3.zoom().on("zoom", zoomed));
+    
+    // Enable zooming.
+    function zoomed(event) {
+        svg.attr("transform", event.transform);
+    }
 
     // Append links.
     const link = svg.append("g")
@@ -47,14 +52,6 @@ export function kcTree(data) {
       });
 
     document.getElementById("tree-container").appendChild(svg.node());
-}
-
-
-/*
-Enable zooming.
-*/
-function zoomed(event) {
-    svg.attr("transform", event.transform);
 }
 
 
