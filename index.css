@@ -5,6 +5,8 @@
 
 .node {
     stroke-width: 1.5;
+    fill: #fff;
+    stroke: #000;
 }
 
 .internal {
